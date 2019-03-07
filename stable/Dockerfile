@@ -1,8 +1,6 @@
 FROM ubuntu
 USER root
 
-ENV RTVERSION=3.8
-
 RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/hippo82/rtorrent-rutorrent-shared.git a && \
     cp ./a/extra.list /etc/apt/sources.list.d/extra.list && \
@@ -11,10 +9,10 @@ RUN apt-get update && apt-get install -y git && \
     rm -rf /var/lib/apt/lists/* && \
     cp ./a/rutorrent-*.nginx /root/ && \
     mkdir -p /var/www && \
-    wget --no-check-certificate https://github.com/Novik/ruTorrent/archive/v$RTVERSION.tar.gz && \
-    tar xzf v$RTVERSION.tar.gz && \
-    mv ruTorrent-$RTVERSION /var/www/rutorrent && \
-    rm v$RTVERSION.tar.gz && \
+    wget --no-check-certificate https://github.com/Novik/ruTorrent/archive/v3.8.tar.gz && \
+    tar xzf v3.8.tar.gz && \
+    mv ruTorrent-3.8 /var/www/rutorrent && \
+    rm v3.8.tar.gz && \
     cp ./a/config.php /var/www/rutorrent/conf/ && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \
