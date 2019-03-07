@@ -19,14 +19,14 @@ RUN apt-get update && apt-get install -y git && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \
 	cp -r ./plugins/ratiocolor /var/www/rutorrent/plugins/ && \
-	cp -r ./themes/Agent34 /var/www/rutorrent/plugins/themes/themes/ && \
-	cp -r ./themes/Agent46 /var/www/rutorrent/plugins/themes/themes/ && \
-	cp -r ./themes/FlatUI_Dark /var/www/rutorrent/plugins/themes/themes/ && \
-	cp -r ./themes/FlatUI_Light /var/www/rutorrent/plugins/themes/themes/ && \
-	cp -r ./themes/FlatUI_Material /var/www/rutorrent/plugins/themes/themes/ && \
-	cp -r ./themes/MaterialDesign /var/www/rutorrent/plugins/themes/themes/ && \
-	cp -r ./themes/OblivionBlue /var/www/rutorrent/plugins/themes/themes/ && \
-	cp -r ./themes/club-QuickBox /var/www/rutorrent/plugins/themes/themes/ && \
+	cp -r ./themes/Agent34 /var/www/rutorrent/plugins/theme/themes/ && \
+	cp -r ./themes/Agent46 /var/www/rutorrent/plugins/theme/themes/ && \
+	cp -r ./themes/FlatUI_Dark /var/www/rutorrent/plugins/theme/themes/ && \
+	cp -r ./themes/FlatUI_Light /var/www/rutorrent/plugins/theme/themes/ && \
+	cp -r ./themes/FlatUI_Material /var/www/rutorrent/plugins/theme/themes/ && \
+	cp -r ./themes/MaterialDesign /var/www/rutorrent/plugins/theme/themes/ && \
+	cp -r ./themes/OblivionBlue /var/www/rutorrent/plugins/theme/themes/ && \
+	cp -r ./themes/club-QuickBox /var/www/rutorrent/plugins/theme/themes/ && \
     sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf
 
 
