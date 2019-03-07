@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y git && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \
 	cp -r ./plugins/ratiocolor /var/www/rutorrent/plugins/ && \
+	cp -r ./plugins/filemanager /var/www/rutorrent/plugins/ && \
 	cp -r ./themes/Agent34 /var/www/rutorrent/plugins/theme/themes/ && \
 	cp -r ./themes/Agent46 /var/www/rutorrent/plugins/theme/themes/ && \
 	cp -r ./themes/FlatUI_Dark /var/www/rutorrent/plugins/theme/themes/ && \
@@ -30,7 +31,7 @@ RUN apt-get update && apt-get install -y git && \
     sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf
 
 
-EXPOSE 80/tcp 443/tcp 49160 49161
+EXPOSE 80 443 49160 49161
 VOLUME /downloads
 
 CMD ["supervisord"]
