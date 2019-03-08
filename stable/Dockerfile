@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y git && \
     cp ./a/config.php /var/www/rutorrent/conf/ && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \
-	cp -r ./themes/themes/`cat ./themes/themelist` /var/www/rutorrent/plugins/theme/themes/ && \
-	cp -r ./plugins/plugins/`cat ./plugins/pluginslist` /var/www/rutorrent/plugins/ && \
+	cp -r ./themes/`cat ./themes/themelist`/ /var/www/rutorrent/plugins/theme/themes/ && \
+	cp -r ./plugins/`cat ./plugins/pluginslist`/ /var/www/rutorrent/plugins/ && \
     sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf
 
 
