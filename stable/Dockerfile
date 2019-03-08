@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y git && \
     sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf
 
 
-EXPOSE 80 443 49160 49161
+EXPOSE 80/tcp 443/tcp 49160/udp 49161/tcp 49161/udp
 VOLUME /downloads
 
 CMD ["supervisord"]
